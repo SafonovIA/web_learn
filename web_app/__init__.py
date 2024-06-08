@@ -1,11 +1,13 @@
 from flask import Flask, render_template
 from web_app.wether import wether_by_city
 from web_app.py_news import get_python_news
+from web_app.model import db
 
 def create_app():
     # Инициализация фласк с именем этого файла
     app = Flask(__name__)
     app.config.from_pyfile("config.py") # Берем настройки из файла конфиг
+    db.init_app(app) # Инициализируем базу данных
 
     @app.route("/") # Когда пользователь зайдет на главную страницу выполнить след. функцию
     def index():

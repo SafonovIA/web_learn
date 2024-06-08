@@ -24,5 +24,3 @@ def wether_by_city(city_name):
     except(requests.RequestException, ValueError): # Сетевые ошибки и ошибки значений
         return False
 
-if __name__ == "__main__":
-    pass
